@@ -1,3 +1,6 @@
+const todos = [];
+const RENDER_EVENT = 'render-todo';
+
 document.addEventListener('DOMContentLoaded', () => {
     const submitForm = document.getElementById('form');
     submitForm.addEventListener('submit', (e) => {
