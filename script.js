@@ -16,3 +16,16 @@ function addTodo() {
 
     document.dispatchEvent(new Event(RENDER_EVENT));
 }
+
+function generateId() {
+    return +new Date();
+}
+
+function generateTodo(id, title, finishDate, isFinished) {
+    return {
+        id,
+        title,
+        finishDate,
+        isFinished
+    }
+}
