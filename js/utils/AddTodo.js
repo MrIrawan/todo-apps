@@ -1,14 +1,15 @@
 import { GenerateId } from "./GenerateId.js";
+import { GenerateTodo } from "./GnerateTodo.js";
 
-function AddTodo(todoTitle, todoFinishDate, isFinished) {
-    const todoTitle = todoTitle;
-    const todoFinishDate = todoFinishDate;
+function AddTodo(todoTitle, todoFinishDate, isFinished, event, arrTodos = []) {
+    const title = todoTitle.value;
+    const finishDate = todoFinishDate.value;
 
     const uniqeId = GenerateId();
-    const todoSchema = generateTodo(uniqeId, todoTitle, todoFinishDate, isFinished);
-    todos.push(todoSchema);
+    const todoSchema = GenerateTodo(uniqeId, title, finishDate, isFinished);
+    arrTodos.push(todoSchema);
 
-    document.dispatchEvent(new Event(RENDER_EVENT));
+    document.dispatchEvent(new Event(event));
 }
 
 export { AddTodo };
