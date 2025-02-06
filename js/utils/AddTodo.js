@@ -1,8 +1,10 @@
+import { GenerateId } from "./GenerateId.js";
+
 function AddTodo(todoTitle, todoFinishDate, isFinished) {
     const todoTitle = todoTitle;
     const todoFinishDate = todoFinishDate;
 
-    const uniqeId = generateId();
+    const uniqeId = GenerateId();
     const todoSchema = generateTodo(uniqeId, todoTitle, todoFinishDate, isFinished);
     todos.push(todoSchema);
 
