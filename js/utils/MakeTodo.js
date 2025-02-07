@@ -14,6 +14,33 @@ function MakeTodo(todoSchema) {
     container.append(textContainer);
     container.setAttribute('id', `todo-${todoSchema.todoUnique}`);
 
+    if (todoSchema.todoStatus) {
+        const undoButton = document.createElement('button');
+        undoButton.classList.add('undo-button');
+
+        undoButton.addEventListener('click', () => {
+            UndoTask(todoSchema.todoUnique);
+        });
+
+        const trashButton = document.createElement('button');
+        trashButton.classList.add('trash-button');
+
+        trashButton.addEventListener('click', () => {
+            RemoveTask(todoSchema.todoUnique);
+        });
+
+        container.append(undoButton, trashButton);
+    } else {
+        const checkButton = document.createElement('button');
+        checkButton.classList.add('check-button');
+
+        checkButton.addEventListener('click', () => {
+            CompletedTask(todoSchema.todoUnique);
+        });
+
+        container.append(checkButton);
+    }
+
     return container;
 }
 
