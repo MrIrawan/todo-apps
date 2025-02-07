@@ -1,9 +1,9 @@
 function GenerateTodo(id, todoTitle, todoFinishDate, isFinished) {
     return {
-        id,
-        todoTitle,
-        todoFinishDate,
-        isFinished
+        todoUnique : id,
+        todoTask : todoTitle,
+        todoTimeStamp : todoFinishDate,
+        todoStatus : isFinished
     }
 }
 
