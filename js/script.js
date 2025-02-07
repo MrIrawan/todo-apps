@@ -1,4 +1,5 @@
 import { AddTodo } from "./utils/AddTodo.js";
+import { MakeTodo } from "./utils/MakeTodo.js";
 
 const todos = [];
 const RENDER_EVENT = 'render-todo';
@@ -14,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener(RENDER_EVENT, () => {
-    console.log(todos);
-    
+    const uncompletedTODOList = document.getElementById('todos');
+    uncompletedTODOList.innerHTML = '';
+
+    todos.forEach((todo) => {
+        const todoElement = MakeTodo(todo);
+        uncompletedTODOList.append(todoElement);
+    })
 })
