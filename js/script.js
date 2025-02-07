@@ -18,8 +18,15 @@ document.addEventListener(RENDER_EVENT, () => {
     const uncompletedTODOList = document.getElementById('todos');
     uncompletedTODOList.innerHTML = '';
 
+    const completedTODOList = document.getElementById('completed-todos');
+    completedTODOList.innerHTML = '';
+
     todos.forEach((todo) => {
         const todoElement = MakeTodo(todo, todos, RENDER_EVENT);
-        if (!todo.todoStatus) uncompletedTODOList.append(todoElement);
+        if (!todo.todoStatus) {
+            uncompletedTODOList.append(todoElement)
+        } else {
+            completedTODOList.append(todoElement)
+        }
     })
 })

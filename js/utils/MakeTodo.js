@@ -1,3 +1,6 @@
+import { CompletedTask } from "./CompletedTask.js"
+import { FindTodo } from "./FindTodo.js"
+
 function MakeTodo(todoSchema, arrTodo, event) {
     const textTodoTitle = document.createElement('h2');
     textTodoTitle.innerText = todoSchema.todoTask;

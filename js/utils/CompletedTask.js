@@ -1,3 +1,5 @@
+import { FindTodo } from "./FindTodo.js";
+
 function CompletedTask(todoUnique, arrTodo, event) {
     const todoTarget = FindTodo(todoUnique, arrTodo);
 

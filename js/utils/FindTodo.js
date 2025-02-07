@@ -6,3 +6,5 @@ function FindTodo(todoUnique, arrTodo) {
     }
     return null;
 }
+
+export { FindTodo };
