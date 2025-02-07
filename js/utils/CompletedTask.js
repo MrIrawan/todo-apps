@@ -1,5 +1,5 @@
-function CompletedTask(todoUnique, event) {
-    const todoTarget = FindTodo(todoUnique);
+function CompletedTask(todoUnique, arrTodo, event) {
+    const todoTarget = FindTodo(todoUnique, arrTodo);
 
     if (todoTarget == null) return;
 

@@ -19,7 +19,7 @@ document.addEventListener(RENDER_EVENT, () => {
     uncompletedTODOList.innerHTML = '';
 
     todos.forEach((todo) => {
-        const todoElement = MakeTodo(todo);
-        uncompletedTODOList.append(todoElement);
+        const todoElement = MakeTodo(todo, todos, RENDER_EVENT);
+        if (!todo.todoStatus) uncompletedTODOList.append(todoElement);
     })
 })

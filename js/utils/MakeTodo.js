@@ -1,4 +1,4 @@
-function MakeTodo(todoSchema) {
+function MakeTodo(todoSchema, arrTodo, event) {
     const textTodoTitle = document.createElement('h2');
     textTodoTitle.innerText = todoSchema.todoTask;
 
@@ -35,7 +35,7 @@ function MakeTodo(todoSchema) {
         checkButton.classList.add('check-button');
 
         checkButton.addEventListener('click', () => {
-            CompletedTask(todoSchema.todoUnique);
+            CompletedTask(todoSchema.todoUnique, arrTodo, event);
         });
 
         container.append(checkButton);
