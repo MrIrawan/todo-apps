@@ -1,5 +1,5 @@
 function FindTodoIndex(todoUnique, arrTodo) {
-    for (const index of arrTodo) {
+    for (const index in arrTodo) {
         if (arrTodo[index].todoUnique === todoUnique) {
             return index;
         }

@@ -1,4 +1,5 @@
 import { FindTodo } from "./FindTodo.js";
+import { FindTodoIndex } from "./FindTodoIndex.js";
 
 function UndoTask(event, todoUnique, arrTodo) {
     const todoTarget = FindTodo(todoUnique, arrTodo);
@@ -6,6 +7,8 @@ function UndoTask(event, todoUnique, arrTodo) {
     if (todoTarget == null) return;
 
     todoTarget.todoStatus = false;
+    console.log(todoUnique);
+    
     document.dispatchEvent(new Event(event));
 }
 
