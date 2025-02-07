@@ -1,5 +1,5 @@
-import { CompletedTask } from "./CompletedTask.js"
-import { FindTodo } from "./FindTodo.js"
+import { CompletedTask } from "./CompletedTask.js";
+import { UndoTask, RemoveTask } from "./TaskUtils.js";
 
 function MakeTodo(todoSchema, arrTodo, event) {
     const textTodoTitle = document.createElement('h2');
@@ -22,14 +22,14 @@ function MakeTodo(todoSchema, arrTodo, event) {
         undoButton.classList.add('undo-button');
 
         undoButton.addEventListener('click', () => {
-            UndoTask(todoSchema.todoUnique);
+            UndoTask(event, todoSchema.todoUnique, arrTodo);
         });
 
         const trashButton = document.createElement('button');
         trashButton.classList.add('trash-button');
 
         trashButton.addEventListener('click', () => {
-            RemoveTask(todoSchema.todoUnique);
+            RemoveTask(event, todoSchema.todoUnique, arrTodo);
         });
 
         container.append(undoButton, trashButton);

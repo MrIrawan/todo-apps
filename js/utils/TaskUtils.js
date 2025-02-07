@@ -1,0 +1,21 @@
+import { FindTodo } from "./FindTodo.js";
+
+function UndoTask(event, todoUnique, arrTodo) {
+    const todoTarget = FindTodo(todoUnique, arrTodo);
+
+    if (todoTarget == null) return;
+
+    todoTarget.todoStatus = false;
+    document.dispatchEvent(new Event(event));
+}
+
+function RemoveTask(event, todoUnique, arrTodo) {
+    const todoTarget = FindTodoIndex(todoUnique, arrTodo);
+
+    if (todoTarget === -1) return;
+
+    arrTodo.splice(todoTarget, 1);
+    document.dispatchEvent(new Event(event));
+}
+
+export { UndoTask, RemoveTask };
