@@ -7,6 +7,7 @@ function CompletedTask(todoUnique, arrTodo, event) {
 
     todoTarget.todoStatus = true;
     document.dispatchEvent(new Event(event));
+    SaveData();
 }
 
 export { CompletedTask };

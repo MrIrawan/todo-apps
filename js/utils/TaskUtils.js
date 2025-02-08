@@ -10,6 +10,7 @@ function UndoTask(event, todoUnique, arrTodo) {
     console.log(todoUnique);
     
     document.dispatchEvent(new Event(event));
+    SaveData();
 }
 
 function RemoveTask(event, todoUnique, arrTodo) {
@@ -19,6 +20,7 @@ function RemoveTask(event, todoUnique, arrTodo) {
 
     arrTodo.splice(todoTarget, 1);
     document.dispatchEvent(new Event(event));
+    SaveDaa();
 }
 
 export { UndoTask, RemoveTask };

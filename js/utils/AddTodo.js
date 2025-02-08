@@ -10,6 +10,7 @@ function AddTodo(todoTitle, todoFinishDate, isFinished, event, arrTodos = []) {
     arrTodos.push(todoSchema);
 
     document.dispatchEvent(new Event(event));
+    SaveData();
 }
 
 export { AddTodo };
