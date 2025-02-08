@@ -18,4 +18,17 @@ function SaveData(arrTodo) {
     }
 }
 
-export { SaveData };
+function loadDataFromStorage(arrTodo, event) {
+    const serializedData = localStorage.getItem(STORAGE_KEY);
+    let data = JSON.parse(serializedData);
+
+    if (data !== null) {
+        for (const todo of data) {
+            arrTodo.push(todo);
+        }
+    }
+
+    document.dispatchEvent(new Event(event));
+}
+
+export { SaveData, loadDataFromStorage };
