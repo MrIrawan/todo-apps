@@ -1,5 +1,6 @@
 import { FindTodo } from "./FindTodo.js";
 import { FindTodoIndex } from "./FindTodoIndex.js";
+import { SaveData } from "./SaveData.js";
 
 function UndoTask(event, todoUnique, arrTodo) {
     const todoTarget = FindTodo(todoUnique, arrTodo);
@@ -10,7 +11,7 @@ function UndoTask(event, todoUnique, arrTodo) {
     console.log(todoUnique);
     
     document.dispatchEvent(new Event(event));
-    SaveData();
+    SaveData(arrTodo);
 }
 
 function RemoveTask(event, todoUnique, arrTodo) {
@@ -20,7 +21,7 @@ function RemoveTask(event, todoUnique, arrTodo) {
 
     arrTodo.splice(todoTarget, 1);
     document.dispatchEvent(new Event(event));
-    SaveDaa();
+    SaveData(arrTodo);
 }
 
 export { UndoTask, RemoveTask };

@@ -1,5 +1,6 @@
 import { GenerateId } from "./GenerateId.js";
 import { GenerateTodo } from "./GnerateTodo.js";
+import { SaveData } from "./SaveData.js";
 
 function AddTodo(todoTitle, todoFinishDate, isFinished, event, arrTodos = []) {
     const title = todoTitle.value;
@@ -10,7 +11,7 @@ function AddTodo(todoTitle, todoFinishDate, isFinished, event, arrTodos = []) {
     arrTodos.push(todoSchema);
 
     document.dispatchEvent(new Event(event));
-    SaveData();
+    SaveData(arrTodos);
 }
 
 export { AddTodo };
