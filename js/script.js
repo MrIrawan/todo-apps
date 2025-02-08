@@ -1,5 +1,6 @@
 import { AddTodo } from "./utils/AddTodo.js";
 import { MakeTodo } from "./utils/MakeTodo.js";
+import { isStorageExist, loadDataFromStorage } from "./utils/SaveData.js";
 
 const todos = [];
 const RENDER_EVENT = 'render-todo';
@@ -12,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         AddTodo(todoTitle, todoFinishDate, false, RENDER_EVENT, todos);
     });
+    if (isStorageExist()) {
+        loadDataFromStorage(todos, RENDER_EVENT);
+    }
 });
 
 document.addEventListener(RENDER_EVENT, () => {

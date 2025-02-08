@@ -31,4 +31,4 @@ function loadDataFromStorage(arrTodo, event) {
     document.dispatchEvent(new Event(event));
 }
 
-export { SaveData, loadDataFromStorage };
+export { SaveData, loadDataFromStorage, isStorageExist };
