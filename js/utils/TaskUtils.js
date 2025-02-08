@@ -8,7 +8,6 @@ function UndoTask(event, todoUnique, arrTodo) {
     if (todoTarget == null) return;
 
     todoTarget.todoStatus = false;
-    console.log(todoUnique);
     
     document.dispatchEvent(new Event(event));
     SaveData(arrTodo);
